@@ -1,5 +1,19 @@
-.form {
+ul {
+  color: blue;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+label {
+  margin: 0 auto;
+  width: 40rem;
+}
+.name-input {
+  display: flex;
+  justify-content: center;
+
+  height: 2rem;
 }
