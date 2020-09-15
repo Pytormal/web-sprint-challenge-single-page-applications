@@ -10,11 +10,13 @@ describe("Testing our form", () => {
     cy.get("input#name").type(name).should("have.value", name);
 
     cy.get("select")
-      .select("medium 14 pizza")
-      .should("have.value", "medium 14 pizza");
+      .select("xlarge 18 pizza")
+      .should("have.value", "xlarge 18 pizza");
 
-cy.get("#ing-Tomato").click();
-cy.get("#ing-Chicken").click();
+cy.get('[value="Sauce"] > #ing').click();
+    cy.get(":nth-child(4) > #ing").click();
+    cy.get(":nth-child(5) > #ing").click();
+    cy.get(":nth-child(7) > #ing").click()
 
     cy.get("input#special").type(special).should("have.value", special);
 

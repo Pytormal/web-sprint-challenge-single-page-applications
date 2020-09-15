@@ -44,31 +44,31 @@ items:''
     e.persist();
     validate(e);
     let value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+      e.target.type === "option" ? e.target.checked : e.target.value;
     setFormState({ ...formState, [e.target.name]: value });
   };
 
-  const [items] = useState([
+  const [pizzaSize] = useState([
     {
-      label: 'small 10" pizza',
-      value: 'Small 10" pizza',
+      label: 'small 10 pizza',
+      value: 'Small 10 pizza',
     },
     {
-      label: 'medium 14" pizza',
+      label: 'medium 14 pizza',
       value: "medium 14 pizza",
     },
     {
-      label: 'large 16" pizza',
-      value: 'large 16" pizza',
+      label: 'large 16 pizza',
+      value: 'large 16 pizza',
     },
     {
-      label: 'xlarge 18" pizza',
-      value: 'xlarge 18" pizza',
+      label: 'xlarge 18 pizza',
+      value: 'xlarge 18 pizza',
     },
   ]);
   return (
     <select onChange={inputChange}>
-      {items.map(({ label, value }) => (
+      {pizzaSize.map(({ label, value }) => (
         <option key={value} value={value}>
           {label}
         </option>

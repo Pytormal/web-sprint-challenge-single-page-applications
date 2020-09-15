@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import * as yup from "yup";
 
-
-const formSchema = yup.object().shape({
-  "Tomato Sauce": yup.boolean().oneOf([true]),
-  Chicken: yup.boolean().oneOf([true]),
-  Bacon: yup.boolean().oneOf([true]),
-  Steak: yup.boolean().oneOf([true]),
-  Cheese: yup.boolean().oneOf([true]),
-  Peppers: yup.boolean().oneOf([true]),
-  Pepperoni: yup.boolean().oneOf([true]),
+const ingredients = yup.object().shape({
+  "Tomato Sauce": yup.string(),
+  Chicken: yup.string(),
+  Bacon: yup.string(),
+  Steak: yup.string(),
+  Cheese: yup.string(),
+  Peppers: yup.string(),
+  Pepperoni: yup.string(),
 });
 
 
@@ -34,7 +33,7 @@ ing:''
     let value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
     yup
-      .reach(formSchema, e.target.name)
+      .reach(ingredients, e.target.name)
       .validate(value)
       .then((valid) => {
         setErrState({
@@ -100,7 +99,7 @@ ing:''
       {ing.map(({ label, value }) => (
         <div key={value} value={value} onChange={inputChange}>
           {label}
-          <input type="checkbox" id="ing" name={label} />
+          <input type="checkbox" id="ing" name={label} onSubmit={inputChange} />
         </div>
       ))}
       {/* <div key={"Sauce"} value={"Sauce"} onChange={inputChange}>
@@ -114,3 +113,4 @@ ing:''
     </div>
   );
 }
+
