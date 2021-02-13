@@ -1,0 +1,38 @@
+.home-page{
+      display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-pizza{
+    width:12rem;
+    margin: 0 auto;
+   padding:2rem;
+}
+
+.App {
+  width: 300px;
+  justify-content: center;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+
+nav {
+  margin:0 auto;
+  width:10rem;
+  display:flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.form-button{
+    width:8rem;
+   
+    margin: auto;
+}
+
